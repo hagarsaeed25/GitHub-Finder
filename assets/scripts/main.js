@@ -1,0 +1,46 @@
+document.getElementById("toggle-theme").onclick = () => {
+  if (document.body.classList.contains("dark-theme")) {
+    document.body.classList.remove("dark-theme");
+    document.getElementById("toggle-theme").src = "assets/icons/dark.png";
+  } else {
+    document.body.classList.add("dark-theme");
+    document.getElementById("toggle-theme").src = "assets/icons/ligth.png";
+  }
+};
+let searchInput = document.getElementById("search-input");
+let searchButton = document.getElementById("search-button");
+let userData = document.getElementById("user-date");
+
+searchButton.onclick = () => {
+  getUserData();
+};
+function getUserData() {
+  if (searchInput.value === "") {
+    userData.innerHTML = `<span class = "error"> Please Enter The Data</span>`;
+  } else {
+    fetch(`https://api.github.com/users/${searchInput.value}`)
+      .then((response) => response.json())
+      .then((data) => {
+        userData.innerHTML = `
+    <div class="avatar">
+    <img src="${data.avatar_url}" alt="${data.name}"/>
+    <h1>${data.name}</h1>
+    <a href="${data.html_url}" target="_blank">GitHub Account</a>
+    </div>
+    <ol id="user-repos" class="user-repos"></ol>
+    `;
+      });
+  
+fetch(`https://api.github.com/users/${searchInput.value}/repos`)
+  .then((response) => response.json())
+  .then((data) => {
+    let repos = "";
+    for(let i = 0;i<data.length;i++){
+      repos+=`
+      <li><a heref="${data[i].homepage}"target="_blank">${data[i].name}<a/></li>
+      `;
+    }
+document.getElementById("user-repos").innerHTML = repos;
+  });
+}
+}
