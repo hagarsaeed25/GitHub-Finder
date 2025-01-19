@@ -30,17 +30,18 @@ function getUserData() {
     <ol id="user-repos" class="user-repos"></ol>
     `;
       });
-  
-fetch(`https://api.github.com/users/${searchInput.value}/repos`)
-  .then((response) => response.json())
-  .then((data) => {
-    let repos = "";
-    for(let i = 0;i<data.length;i++){
-      repos+=`
-      <li><a heref="${data[i].homepage}"target="_blank">${data[i].name}<a/></li>
-      `;
-    }
-document.getElementById("user-repos").innerHTML = repos;
-  });
+      let repos = "";
+      fetch(`https://api.github.com/users/${searchInput.value}/repos`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          for (let i = 0; i < data.length; i++) {
+            repos += `
+              <li><a class="repo" target="_blank" href=${data[i].homepage}>${data[i].name}</a></li>
+            `;
+          }
+          document.getElementById("user-repos").innerHTML = repos;
+        });
 }
 }

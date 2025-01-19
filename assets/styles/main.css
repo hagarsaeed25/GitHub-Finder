@@ -6,9 +6,9 @@
 
 :root {
   --bg-color: #ffffff;
-  --text-color:#b4d1d0;
-  --btn-color:#b4d1d0;
-  --text-btn:#ffffff;
+  --text-color:#DEAA79;
+  --btn-color:#DEAA79;
+  --text-btn:#000000;
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -17,9 +17,9 @@ body{
 }
 .dark-theme {
   --bg-color: #000000;
-  --text-btn: #000000;
-  --text-color:#b4d1d0;
-  --btn-color:#b4d1d0;
+  --text-btn: #ffffff;
+  --text-color:#DEAA79;
+  --btn-color:#DEAA79;
 }
 
 .container{
@@ -66,7 +66,7 @@ header img{
   width: 50px;
 }
 .search{
-  padding: 60px 0;
+  padding: 60px ;
 }
 .search .container .form {
   display: flex;
@@ -76,7 +76,7 @@ header img{
   flex-wrap: wrap;
 }
 .search .container .form input{
-  width: 60%;
+  width: 80%;
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
@@ -94,27 +94,62 @@ header img{
   margin-bottom: 5px;
 }
 .search .container .form button:hover{
-  background-color:#325755
+  background-color:#b97022
 }
-.user-date span{
+.user-data span{
   display: block;
   text-align: center;
   margin: 30px;
-  color:#325755;
+  color:#806246;
   font-size: 25px;
 font-weight: bold;
 }
-.search .user-date .avatar img {
+.user-data .avatar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+
+}
+.search .user-data .avatar img {
   width: 250px;
   border-radius: 50%;
+
 }
-.search .user-date .avatar h1 {
+.search .user-data .avatar h1 {
   margin: 15px 0 ;
   font-size: 30px;
+  font-weight: bold;
 }
-.search .user-date .avatar a{
-  color: #325755;
+.search .user-data .avatar a{
+  color: #806246;
   font-size: 18px;
+font-weight: bold;
 }
 
+.search .user-data .user-repos {
+ display: flex;
 
+}
+.search .user-data .user-repos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px 35px;
+  margin-top: 20px;
+}
+.search .user-data .repo {
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 10px;
+  background-color: var(--btn-color);
+}
+.search .user-data a {
+  display: block;
+  line-height: 1.6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--text-color);
+}
