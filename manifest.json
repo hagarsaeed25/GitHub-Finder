@@ -4,7 +4,7 @@
   "theme_color": "#DEAA79",
   "background_color": "#fff",
   "display": "standalone",
-  "orientation": "",
+  "orientation": "Any",
   "scope": "/",
   "start_url": "/GitHub-Finder",
   "icons": [
