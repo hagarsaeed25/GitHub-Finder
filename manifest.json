@@ -5,8 +5,9 @@
   "background_color": "#fff",
   "display": "standalone",
   "orientation": "Any",
-  "scope": "/",
-  "start_url": "/GitHub-Finder",
+  "scope": "https://hagarsaeed25.github.io/GitHub-Finder/",
+  "start_url": "https://hagarsaeed25.github.io/GitHub-Finder/",
+  "id":"https://hagarsaeed25.github.io/GitHub-Finder/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
